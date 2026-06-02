@@ -228,3 +228,6 @@ Flexibilidade Inigualável: Diferente de plataformas fechadas, o n8n permite a c
 https://www.n2code.com.br/automacao-de-whatsapp-para-empresas
 https://www.n2code.com.br/case-studies
 https://www.chatpro.com.br/precos
+
+Precisamos adicionar, de alguma forma, também uma coisa de valor que eu sei fazer: adicionar observabilidade nos aplicativos. Não é simplesmente fazer aplicativos, tá? Como você vai adicionar observabilidade? Vai ter um centro nele? Não vai! Vai ter Firebase, vai ter Crashlytics. Então tudo isso é um conhecimento bem avançado que só realmente um desenvolvedor como eu sabe fazer. Eu preciso vender certo? Então precisa adicionar isso de alguma forma. Me ajuda a pensar em maneiras de fazer isso? 
+
