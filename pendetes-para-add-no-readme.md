@@ -231,3 +231,36 @@ https://www.chatpro.com.br/precos
 
 Precisamos adicionar, de alguma forma, também uma coisa de valor que eu sei fazer: adicionar observabilidade nos aplicativos. Não é simplesmente fazer aplicativos, tá? Como você vai adicionar observabilidade? Vai ter um centro nele? Não vai! Vai ter Firebase, vai ter Crashlytics. Então tudo isso é um conhecimento bem avançado que só realmente um desenvolvedor como eu sabe fazer. Eu preciso vender certo? Então precisa adicionar isso de alguma forma. Me ajuda a pensar em maneiras de fazer isso? 
 
+Esse guia aqui é fodástico:
+https://www.kommo.com/br/blog/chatbot-whatsapp/
+
+Este tem muitos clientes grandes tais como rock in rio, unimed, adapta, etc:
+https://botconversa.com.br/en/
+
+Gostei da home, da frase do topo:
+https://a.umbler.com/br/chatbot-talk/
+O chatbot que dá super poderes para o seu WhatsApp
+Qualifique seus leads, tenha um funil que vende 24h por dia e transforme o seu negócio para sempre com o atendente mais produtivo do mundo.
+Será que o chatbot funciona para o meu negócio?
+Todo negócio tem suas necessidades específicas, por isso o Umbler Talk é a ferramenta com mais opções e configurações disponível no mercado.
+Saúde (Clínicas, Hospitais e Farmácias) — automatizando atendimentos, agendamentos e lembretes de consultas.
+Educação (Cursos online, Escolas e Universidades) — escala atendimentos com perguntas corriqueiras de cadastro.
+Escritórios (Contabilidade e Advocacia) — evita solicitações não tratadas, impostos atrasados e prazos perdidos.
+Provedores — operação de vendas para atender com eficiência em datas de grande demanda (Black Friday, Dia das Mães etc.).
+Outras empresas de serviços — fluxo de trabalho sem deixar cliente sem orçamento ou estourar prazo.
+Indústrias — representantes, distribuidores, clientes e fornecedores acessam vários departamentos por um único número, com histórico de conversas.
+
+Outros grandes players do mercado:
+https://www.rdstation.com/produtos/conversas/chatbot-para-whatsapp/
+https://www.zendesk.com.br/pricing/
+
+Opções mais baratas de chatbot:
+https://www.tecmundo.com.br/software/266837-melhor-chatbot-whatsapp-veja-7-opcoes.htm
+https://sendpulse.com/br/pricing/messengers
+
+Whatsapp business oferece omnichannel com integrações com insta e fb já que pertencem todos à meta?
+https://whatsappbusiness.com/products/business-platform/
+
+Interessantes as features do CRM deles:
+https://www.bitrix24.com.br/tools/crm/
+Mas achei caro pra assinar, as ferramentas que realmente valem a pena estão no plano de 1k reais, isso é absurdo, mas é interessante pra eu saber como precificar, mas claro, se eu precisar, eu mesmo codifico isso.
