@@ -39,6 +39,7 @@ We leverage modern technologies to construct resilient systems:
 
 Mapeamos e organizamos nossas referências de mercado, concorrentes, tabelas de planos e diferenciais técnicos em documentos dedicados para cada vertical de produto:
 
+*   **[Portfólio Consolidado de Produtos & Serviços](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/portfolio-produtos.md):** O catálogo completo e atualizado de soluções que a Dumentre oferece ao mercado (Websites, Chatbots, SEO Local e os Diferenciais Técnicos).
 *   **[Websites & Custom Software](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/pesquisa/websites.md):** Análise de referências de design/copy (Pax Digital, Octopus), tabelas comparativas de hospedagem e posicionamento frente a criadores *no-code*.
 *   **[Chatbots, CRM & Automações](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/pesquisa/chatbot-crm.md):** Pesquisa sobre ferramentas de WhatsApp API, segmentação de atendimento por setor de mercado (Saúde, Educação, etc.) e precificação de CRM (Bitrix24/Kommo).
 *   **[SEO Local & Presença no Google](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/pesquisa/seo-local.md):** Estratégia de otimização de Perfil de Empresa, matriz de dificuldades operacionais, planos comerciais de SEO local e links úteis de suporte do Google.
