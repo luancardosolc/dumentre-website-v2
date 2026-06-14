@@ -41,7 +41,14 @@ Mapeamos e organizamos nossas referências de mercado, concorrentes, tabelas de 
 
 *   **[Websites & Custom Software](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/pesquisa/websites.md):** Análise de referências de design/copy (Pax Digital, Octopus), tabelas comparativas de hospedagem e posicionamento frente a criadores *no-code*.
 *   **[Chatbots, CRM & Automações](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/pesquisa/chatbot-crm.md):** Pesquisa sobre ferramentas de WhatsApp API, segmentação de atendimento por setor de mercado (Saúde, Educação, etc.) e precificação de CRM (Bitrix24/Kommo).
+*   **[SEO Local & Presença no Google](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/pesquisa/seo-local.md):** Estratégia de otimização de Perfil de Empresa, matriz de dificuldades operacionais, planos comerciais de SEO local e links úteis de suporte do Google.
 *   **[Diferenciais Técnicos & Observabilidade](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/pesquisa/diferenciais-tecnicos.md):** Estrutura sobre como agregar e vender **observabilidade** avançada (Firebase Crashlytics, logs e alertas) como um diferencial competitivo e premium.
+
+---
+
+## 🏢 Dados da Empresa & Identidade
+
+*   **[Perfil Institucional Dumentre](file:///C:/Users/luanc/projects/personal/dumentre-website-v2/docs/identidade-dumentre.md):** Informações cadastrais oficiais, localização no Google Maps e caminhos dos arquivos do logotipo.
 
 ---
 
