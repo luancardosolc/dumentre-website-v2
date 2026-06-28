@@ -301,11 +301,14 @@ img {
 }
 
 .brand-name {
-  font-family: var(--font-headings);
-  font-weight: 800;
+  font-family: "Montserrat", "Avenir Next", Arial, sans-serif;
+  font-weight: 500;
   font-size: 20px;
-  color: #ffffff;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: #f5f7fa;
+  line-height: 1;
+  text-shadow: 0 0 18px rgba(120, 170, 220, 0.18);
 }
 
 .mobile-nav-toggle {
