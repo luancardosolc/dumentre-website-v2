@@ -1412,3 +1412,38 @@ img {
   transform: translateY(0);
 }
 
+/* ----------------------------------------------------
+   WHATSAPP BRAND ICON & HEADER CTA SCROLL VISIBILITY
+   ---------------------------------------------------- */
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.btn-whatsapp {
+  gap: 10px !important;
+}
+
+/* Header CTA Observer Visibility control (avoids visual redundancy on page load) */
+@media (min-width: 901px) {
+  .nav-cta-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity var(--transition-normal) ease, 
+                transform var(--transition-normal) ease, 
+                visibility var(--transition-normal) ease;
+  }
+  
+  .nav-cta-wrapper.cta-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    pointer-events: none;
+  }
+}
+

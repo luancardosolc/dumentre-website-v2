@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderScroll();
   initScrollHighlight();
   initScrollAnimations();
+  initHeaderCTAObserver();
 });
 
 /**
@@ -185,4 +186,39 @@ function initScrollAnimations() {
     el.classList.add("animate-ready");
     animationObserver.observe(el);
   });
+}
+
+/**
+ * Control visibility of Header CTA to avoid duplication with Hero CTA
+ */
+function initHeaderCTAObserver() {
+  const hero = document.querySelector(".hero-section");
+  const headerCTA = document.querySelector(".nav-cta-wrapper");
+  
+  if (!hero || !headerCTA) return;
+  
+  if (!("IntersectionObserver" in window)) {
+    // Fallback if IntersectionObserver is not supported
+    return;
+  }
+  
+  const observerOptions = {
+    root: null,
+    // Discards visibility when hero is less than 10% visible
+    threshold: 0.1
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Hero is visible, hide header CTA to avoid redundancy
+        headerCTA.classList.add("cta-hidden");
+      } else {
+        // Hero is scrolled out, show header CTA
+        headerCTA.classList.remove("cta-hidden");
+      }
+    });
+  }, observerOptions);
+  
+  observer.observe(hero);
 }
