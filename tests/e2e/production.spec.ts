@@ -40,5 +40,18 @@ test.describe("Production smoke @production", () => {
 
       expect(failures, `Failed asset requests on ${url}: ${failures.join(", ")}`).toEqual([]);
     });
+
+    test(`${url}/favicon.ico is a real icon, not the HTML SPA fallback`, async ({ request }) => {
+      const response = await request.get(`${url}/favicon.ico`);
+      expect(response.status()).toBe(200);
+
+      const contentType = response.headers()["content-type"] ?? "";
+      expect(contentType).not.toContain("text/html");
+      expect(contentType).toMatch(/image\/(x-icon|vnd\.microsoft\.icon)/);
+
+      const body = await response.body();
+      expect(body.readUInt16LE(0)).toBe(0);
+      expect(body.readUInt16LE(2)).toBe(1);
+    });
   }
 });
