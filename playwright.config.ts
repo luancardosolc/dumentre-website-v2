@@ -46,7 +46,10 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: `python -m http.server ${PORT}`,
+    // Build dist/ (the same output Cloudflare Pages publishes) before serving it, so local
+    // tests exercise exactly what goes to production — not the full repo (tests/, docs/,
+    // package.json, etc. are never in dist/, see scripts/build-static.js).
+    command: `npm run build && python -m http.server ${PORT} -d dist`,
     url: BASE_URL,
     reuseExistingServer: true,
     timeout: 120_000,

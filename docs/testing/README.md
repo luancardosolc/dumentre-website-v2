@@ -19,6 +19,41 @@ npx playwright install
 `npx playwright install` baixa os browsers (Chromium, Firefox, WebKit) usados pelo Playwright —
 só precisa ser rodado uma vez por máquina (ou quando a versão do `@playwright/test` mudar).
 
+## Build estático (`dist/`)
+
+O site não tem build step de verdade (é HTML/CSS/JS vanilla), mas o repo tem arquivos de
+desenvolvimento (`tests/`, `docs/`, `package.json`, `playwright.config.ts`, `tsconfig.json`,
+relatórios) que **não podem** ser publicados. `npm run build` roda
+`scripts/build-static.js` (só Node.js standard library, sem dependências) e copia **apenas**
+os arquivos realmente referenciados pelo site para `dist/`:
+
+```bash
+npm run build
+```
+
+O script:
+1. Confirma que cada arquivo da lista existe em disco — se algo referenciado em `index.html`
+   sumir, o build falha alto e claro em vez de publicar um site quebrado.
+2. Apaga e recria `dist/`.
+3. Copia só esses arquivos (preservando `assets/icons/brands/`).
+
+A lista de arquivos públicos foi construída a partir de um inventário real de `index.html`
+(todo `img src`, `link href`, `script src`, `meta og:image`/`twitter:image`, JSON-LD
+`logo`/`image`) e de `site.webmanifest` (`icons`) — não é uma lista arbitrária. Se adicionar uma
+nova referência local em `index.html`, atualize `PUBLIC_FILES` em `scripts/build-static.js` de
+acordo.
+
+`dist/` é git-ignorado (gerado a cada build, nunca commitado).
+
+### Configuração no Cloudflare Pages
+
+O projeto Pages deve usar:
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+
+(Antes disso, o Pages publicava a raiz do repo inteira — incluindo `tests/`, `docs/` e
+`package.json` — que não é o que deve ficar público.)
+
 ## Rodando os testes localmente
 
 ```bash
@@ -27,10 +62,12 @@ npm run test:e2e:ui       # abre o UI mode do Playwright (interativo)
 npm run test:e2e:headed   # roda com o browser visível
 ```
 
-Isso sobe automaticamente `python -m http.server 8799` na raiz do repo (via `webServer` do
-`playwright.config.ts`), roda os testes contra `http://127.0.0.1:8799` e derruba o servidor no
-final. Não precisa internet — exceto para carregar as fontes do Google Fonts referenciadas no
-`<head>` (fora do controle dos testes locais; nenhum teste depende delas terem carregado).
+O `webServer` do `playwright.config.ts` roda `npm run build` e depois sobe
+`python -m http.server 8799 -d dist` — ou seja, os testes locais exercitam exatamente o que vai
+para produção (o conteúdo de `dist/`, não o repo inteiro). Os testes rodam contra
+`http://127.0.0.1:8799` e o servidor cai no final. Não precisa internet — exceto para carregar as
+fontes do Google Fonts referenciadas no `<head>` (fora do controle dos testes locais; nenhum
+teste depende delas terem carregado).
 
 ## Rodando os testes de produção
 
@@ -84,7 +121,8 @@ npx playwright show-trace test-results/<pasta-do-teste>/trace.zip
 | `mobile-menu.spec.ts` | Hamburger, abrir/fechar (clique/link/Escape), `aria-expanded`, scroll lock do body, e a regressão do bug de overlay (painel cobre a tela real, hero não fica clicável por baixo) — mobile only, viewports reais 375×667 e 390×844 |
 | `faq.spec.ts` | 9 perguntas presentes, expandir/colapsar, `aria-expanded`, múltiplos itens abertos ao mesmo tempo |
 | `assets.spec.ts` | Logo e ícone do WhatsApp (3 instâncias) carregam com `naturalWidth > 0`, nenhum asset principal retorna erro de rede |
-| `production.spec.ts` (`@production`) | Smoke mínimo (200, título, CSS, assets sem 404) nas 3 URLs de produção |
+| `favicon.spec.ts` | `favicon.ico` é um ícone binário real (não HTML), os 5 PNGs retornam `image/png`, `site.webmanifest` é JSON válido com `name`/`short_name`/cores corretos, e todas as tags de favicon estão no `<head>` |
+| `production.spec.ts` (`@production`) | Smoke mínimo (200, título, CSS, assets sem 404) nas 3 URLs de produção + `favicon.ico` não pode ser o fallback HTML do SPA |
 
 Projetos configurados em `playwright.config.ts`:
 - `chromium-desktop` — Desktop Chrome, viewport padrão.

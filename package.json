@@ -4,6 +4,7 @@
   "private": true,
   "description": "Dumentre marketing site (static HTML/CSS/JS) with Playwright E2E test coverage.",
   "scripts": {
+    "build": "node scripts/build-static.js",
     "test:e2e": "playwright test --grep-invert @production",
     "test:e2e:ui": "playwright test --ui --grep-invert @production",
     "test:e2e:headed": "playwright test --headed --grep-invert @production",
