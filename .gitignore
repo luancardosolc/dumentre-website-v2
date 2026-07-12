@@ -62,6 +62,9 @@ cypress/screenshots/
 cypress/videos/
 .playwright-mcp/
 screenshot_*.png
+playwright-report/
+test-results/
+blob-report/
 
 # Python (Backend Environments)
 __pycache__/
