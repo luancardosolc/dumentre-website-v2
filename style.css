@@ -38,6 +38,7 @@
   --border-radius: 12px;
   --border-radius-sm: 8px;
   --border-radius-lg: 20px;
+  --header-height: 70px;
   
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -285,7 +286,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: var(--header-height);
 }
 
 .logo-link {
@@ -359,10 +360,14 @@ img {
 
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: var(--header-height);
     left: 0;
     right: 0;
-    bottom: 0;
+    /* `bottom: 0` breaks here: `.main-header` has `backdrop-filter`, which makes it the
+       containing block for this fixed element, so `bottom` resolves against the header's
+       own ~70px box instead of the viewport. `height` in vh units is unaffected by that
+       containing block, so it reliably fills down to the real bottom of the screen. */
+    height: calc(100vh - var(--header-height));
     background-color: var(--bg-main);
     flex-direction: column;
     align-items: stretch;
@@ -372,7 +377,8 @@ img {
     border-top: 1px solid var(--border-color);
     transform: translateY(-120%);
     opacity: 0;
-    transition: transform var(--transition-normal), opacity var(--transition-normal);
+    visibility: hidden;
+    transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
     overflow-y: auto;
     z-index: 999;
   }
@@ -380,6 +386,7 @@ img {
   .nav-menu.active {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
   }
 
   .nav-list {
